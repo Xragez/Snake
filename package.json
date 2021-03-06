@@ -1,0 +1,29 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "webpack": "^5.16.0",
+    "webpack-cli": "^4.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "@types/chai": "^4.2.14",
+    "babel-cli": "^6.26.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "scripts": {
+    "test": "mocha",
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

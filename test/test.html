@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script>
+      mocha.setup('bdd');
+    </script>
+    <script>
+      function assert(expr, msg) {
+        if (!expr) throw new Error(msg || 'failed');
+      }
+    </script>
+    <script type="module" src="../src/js/snake_game.js"></script>
+    <script type="module" src="./test.js"></script>
+    <script>
+      window.onload = () => {
+        mocha.run();
+      };
+    </script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <div id="game" class="container" style="display: none;">
+      <div id="game_upper">
+          <div class="text_box", id="score">0</div>
+          <div class="logo_small">
+          </div>
+      </div>
+      <div id="game_board"></div>
+      <div class="game_buttons">
+          <button class="button" id="exit_button_1">Exit</button>
+          <button class="button" id="restart_button_1">Restart</button>
+      </div>
+  </div>
+
+  <div id="main_menu" class="container_menu">
+      </div>
+      <button class="button" id="new_game_button" style="display: none;">New Game</button>
+      <button class="button" id="settings_button" style="display: none;">Settings</button>
+
+  </div>
+  <div id="settings_menu" class="container_menu">
+      <h2>Select grid size:</h2>
+      <div class="custom-select">
+          <select id="grid_size">
+            <option value="1" selected="selected">Small</option>
+            <option value="2" >Medium</option>
+            <option value="3">Big</option>
+          </select>
+      </div>
+
+      <button class="button" id="exit_button_2">Exit</button>
+
+  </div>
+  <div id="game_over_menu" class="container_menu">
+      GAME OVER
+      <div class="game_over_score">
+          <div>Your score:</div>
+          <div id="end_score"></div>
+      </div>
+      <button class="button" id="restart_button_2">Restart</button>
+      <button class="button" id="exit_button_3">Exit</button>
+  </div>
+  </body>
+</html>
